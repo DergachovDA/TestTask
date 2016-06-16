@@ -6,7 +6,15 @@ package ua.in.dergachovda;
 //        Задача может показаться очевидной,
 //        но нужно получить наиболее простое и красивое решение.
 
-public class Main {
+public class Multiple {
+
+    private int value;
+    private final String FIZZ = "Fizz";
+    private final String BUZZ = "Buzz";
+
+    Multiple(int value) {
+        this.value = value;
+    }
 
     public static void main(String[] args) {
 
@@ -15,34 +23,24 @@ public class Main {
         }
     }
 
-    private static class Multiple {
-        private int value;
-        private final String FIZZ = "Fizz";
-        private final String BUZZ = "Buzz";
+    private boolean isMultipleOf(int denominator) {
+        return this.value % denominator == 0;
+    }
 
-        Multiple (int value) {
-            this.value = value;
+    public String toString() {
+
+        if (isMultipleOf(15)) {
+            return FIZZ + BUZZ;
         }
 
-        private boolean isMultipleOf (int denominator) {
-            return this.value % denominator == 0;
+        if (isMultipleOf(3)) {
+            return FIZZ;
         }
 
-        public String toString() {
-
-            if (isMultipleOf(15)) {
-                return FIZZ + BUZZ;
-            }
-
-            if (isMultipleOf(3)) {
-                return FIZZ;
-            }
-
-            if (isMultipleOf(5)) {
-                return BUZZ;
-            }
-
-            return Integer.toString(value);
+        if (isMultipleOf(5)) {
+            return BUZZ;
         }
+
+        return Integer.toString(value);
     }
 }
