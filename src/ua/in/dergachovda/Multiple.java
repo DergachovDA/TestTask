@@ -9,8 +9,8 @@ package ua.in.dergachovda;
 public class Multiple {
 
     private int value;
-    private final String FIZZ = "Fizz";
-    private final String BUZZ = "Buzz";
+    private final static String FIZZ = "Fizz";
+    private final static String BUZZ = "Buzz";
 
     Multiple(int value) {
         this.value = value;
