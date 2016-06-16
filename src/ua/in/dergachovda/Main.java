@@ -17,6 +17,8 @@ public class Main {
 
     private static class Multiple {
         private int value;
+        private final String FIZZ = "Fizz";
+        private final String BUZZ = "Buzz";
 
         Multiple (int value) {
             this.value = value;
@@ -27,20 +29,20 @@ public class Main {
         }
 
         public String toString() {
-            String out = "";
 
-            if (isMultipleOf(3) || isMultipleOf(5)) {
-                if (isMultipleOf(3)) {
-                    out += "Fizz";
-                }
-                if (isMultipleOf(5)) {
-                    out += "Buzz";
-                }
-            } else {
-                out = Integer.toString(value);
+            if (isMultipleOf(15)) {
+                return FIZZ + BUZZ;
             }
 
-            return out;
+            if (isMultipleOf(3)) {
+                return FIZZ;
+            }
+
+            if (isMultipleOf(5)) {
+                return BUZZ;
+            }
+
+            return Integer.toString(value);
         }
     }
 }
